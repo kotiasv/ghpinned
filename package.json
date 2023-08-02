@@ -1,0 +1,30 @@
+{
+  "name": "github-pinned",
+  "version": "1.1.0",
+  "description": "Package for getting pinned github repos",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kotiasv/ghpinned.git"
+  },
+  "author": "kotiasv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kotiasv/ghpinned/issues"
+  },
+  "homepage": "https://github.com/kotiasv/ghpinned#readme",
+  "devDependencies": {
+    "@types/jsdom": "^21.1.1",
+    "@types/node": "^20.4.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "jsdom": "^22.1.0"
+  }
+}
