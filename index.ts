@@ -1,8 +1,26 @@
 import { GraphQLClient } from "graphql-request"
 import { query } from "./graphql"
-import { GithubGraphqlResponse } from "./types"
 
-export class GithubClient {
+type GithubQuery = {
+    name: string
+    url: string
+    primaryLanguage: {
+        name: string
+        color: string
+    }
+    description: string
+    homepageUrl: string
+}
+
+type GithubGraphqlResponse = {
+    user: {
+        pinnedItems: {
+            nodes: GithubQuery[]
+        }
+    }
+}
+
+class GithubClient {
     token: string | null
     client: GraphQLClient
 
@@ -18,9 +36,7 @@ export class GithubClient {
 
     async getPinnedRepos(username: string) {
         if (!this.token)
-            return {
-                message: "You must set your GitHub API token. Use setToken(<token>)"
-            }
+            return []
 
         const res: GithubGraphqlResponse =
             await this.client.request(query(username))
@@ -30,3 +46,5 @@ export class GithubClient {
         return repos
     }
 }
+
+export default GithubClient

@@ -1,8 +1,8 @@
 {
   "name": "github-pinned",
-  "version": "2.0.0",
+  "version": "2.1.4",
   "description": "Package for getting pinned github repos",
-  "main": "dist",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "start": "ts-node index.ts"
